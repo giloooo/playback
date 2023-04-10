@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>PlayBack</title>
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/swiper.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--Top part where navbar and search bar is-->
+        <div class="header">
+            <!--Background is for the part where the picture is located-->
+            <div class="background">
+                <!--Navigation bar-->
+                <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+                    <div class="container mt-3 align-items-center">
+                        <a href="index.html" class="nav-brand">
+                            <img class="nav-logo" src="./images/logo.png">
+                            <p class="nav-name">PlayBack</p>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <!-- Navbar link !-->
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+                            <div class="navbar-nav ms-auto text-center">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" href="#">Categories</a>
+                                <a class="btn" href="#">LOG IN</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!--The text and image in the header-->
+                <div class="container intro-containter" style="overflow: hidden;">
+                    <img class="header-img" src="./images/ipad.png">
+                    <p class="head">Stream Any Movies in Your Device with PlayBack. Watch movies now!</p>
+                </div>
+                <!--Search bar-->
+                <div class="search-movies">
+                    <form action="POST">
+                        <input class="search" placeholder="Search" type="text">
+                        <button class="btn search" id="searchMovies">SEARCH</button>
+                    </form>
+                </div>
+                <br><br><br><br>
+            </div>
+        </div>
+        
+        <div class="movie-trailer">
+            <div class="movie-preview">
+                <video class="video-trailer"autoplay loop muted >
+                    <source src="/Y2Mate.is - John Wick Chapter 4 (2023 Movie) Official Trailer – Keanu Reeves, Donnie Yen, Bill Skarsgård-qEVUtrk8_B4-1080p-1654398650767.mp4">
+                </video>
+                <div class="trailer-hover">
+                    <div class="hover-details">
+                        <img class="trailer-poster" src="/poster/john wick 4.jpg">
+                        <div class="title-btn">
+                            <strong class="trailer-title">John Wick: Chapter 4</strong>
+                            <br>
+                            <a class="trailer-movie-btn btn" href="/movie.html">WATCH</a>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <p><h1>Movie Title and Poster</h1></p><p><h1>Movie Title and Poster</h1></p><p><h1>Movie Title and Poster</h1></p><p><h1>Movie Title and Poster</h1></p><p><h1>Movie Title and Poster</h1></p><p><h1>Movie Title and Poster</h1></p><p><h1>Movie Title and Poster</h1></p><p><h1>Movie Title and Poster</h1></p><p><h1>Movie Title and Poster</h1></p><p><h1>Movie Title and Poster</h1></p>
+    
+        <script>
+            window.addEventListener('load', videoScroll);
+            window.addEventListener('scroll', videoScroll);
+    
+            function videoScroll() {
+    
+            if ( document.querySelectorAll('video[autoplay]').length > 0) {
+                var windowHeight = window.innerHeight,
+                    videoEl = document.querySelectorAll('video[autoplay]');
+    
+                for (var i = 0; i < videoEl.length; i++) {
+    
+                var thisVideoEl = videoEl[i],
+                    videoHeight = thisVideoEl.clientHeight,
+                    videoClientRect = thisVideoEl.getBoundingClientRect().top;
+    
+                if ( videoClientRect <= ( (windowHeight) - (videoHeight*.5) ) && videoClientRect >= ( 0 - ( videoHeight*.5 ) ) ) {
+                    thisVideoEl.play();
+                } else {
+                    thisVideoEl.pause();
+                }
+            }}}
+        </script>
+    </body>
+</html>
