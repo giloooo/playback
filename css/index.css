@@ -1,0 +1,329 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    touch-action: pan-y;
+}
+
+body {
+    max-width: 100%;
+}
+
+.header {
+    max-height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg, #E963FD, #8233C5, #274B74, #8233C5, #E963FD);
+    background-size: 300% 300%;
+    animation: color 10s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100%, 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.background {
+    max-height: 1200px;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: relative;
+    background-image: url(/images/Image\ 1.png);
+}   
+
+.navbar {
+    max-height: 500px;
+    height: 100%;
+    text-decoration: none;
+    margin-bottom: 5%;
+}
+
+.nav-logo {
+    height: 60px;
+}
+
+.nav-brand {
+    text-decoration: none;
+    position: relative;
+    transform: translateY(20%);
+}
+
+.nav-name {
+    height: 80px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 10px;
+    display: inline-block;
+    transform: translateY(7%);
+
+}
+
+.navbar-nav a {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link:hover{
+    border-bottom: 2px solid white;
+    padding-bottom: 3px
+}
+
+.navbar-nav .btn {
+    background-color: white;
+    mix-blend-mode: screen;
+}
+
+.navbar-nav .btn:hover {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.head {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.header-img {
+    position: relative;
+    max-height: 400px;
+    height: 100%;
+    float: right;
+    margin-top: -5%;
+}
+
+.search-movies {
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 5px;
+}
+.search-movies input {
+    margin: auto;
+    border-radius: 10px;
+    height: 50px;
+    width: 500px;
+    border: none;
+    padding: 20px;
+}
+
+.search-movies .btn {
+    border-radius: 10px;
+    margin-left: 1%;
+    margin-top: -6px;
+    height: 50px;
+    background-color: white;
+    mix-blend-mode: screen;
+    font-weight: bold;
+}
+
+.search-movies .btn:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+.movie-trailer {
+    min-height: 40vh;
+    height: 80vh;
+    overflow: hidden;
+    box-shadow:  0px -50px 80px black;
+    position: relative;
+    background-color: black;
+}
+
+.movie-preview {
+    width: 100%;
+    margin: auto;
+}
+
+.video-trailer {
+    transform: translatez(0);
+    position: absolute;
+    top: -100%;
+    bottom: -100%;
+    left: -100%;
+    right: -100%;    
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    height: 145%;
+}
+
+.trailer-hover {
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 0, 0, 0.4);
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.trailer-hover:hover {
+    opacity: 1;
+}
+
+.hover-details {
+    display: grid;
+    max-height: 80%;
+    bottom: 0;
+    position: absolute;
+    padding-bottom: 3%;
+}
+
+.trailer-poster {
+    max-height: 350px;
+    margin-right: 3%;
+}
+
+.title-btn {
+    max-height: 40%;
+}
+
+.trailer-title {
+    color: white;
+    font-size: 2rem;
+}
+
+.trailer-hover .btn {
+    margin-top: 10px;
+    padding: 10px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #E963FD, #8233C5, #274B74, #8233C5, #E963FD);
+    background-size: 300% 300%;
+    animation: color 10s ease-in-out infinite;
+    position: relative;
+    color: white;
+}
+
+.trailer-hover button:hover {
+    background: transparent;
+    color: #E963FD;
+}
+
+/*Responsiveness for Width*/
+@media (max-width: 1920x) {
+}
+
+@media (max-width: 1199px) {
+    .movie-trailer {
+        height: 70vh;
+    }
+    .video-trailer {
+        height: 135%;
+    }
+
+    .trailer-poster {
+        height: 100%;
+        margin-bottom: -30%;
+    }
+
+    .trailer-hover {
+        padding: 8%;
+    }
+
+    :root {
+        font-size: 80% !important;
+    }
+
+    .header-img {
+        height: 325px;
+    }
+
+    .search-movies .btn {
+        height: 45px;
+    }
+
+    .search-movies input {
+        height: 45px;
+    }
+}
+
+@media (max-width: 991px) {
+    .header-img {
+        display: none;
+    }
+
+    .nav-brand {
+        margin: auto;
+    }
+
+    .head {
+        text-align: center;
+        margin-top: -10px;
+    }
+
+    .movie-trailer {
+        height: 60vh;
+    }
+
+    .video-trailer {
+        height: 135%;
+    }
+
+    .trailer-poster {
+        display: none;
+    }
+
+    .trailer-hover {
+        padding: 8%;
+    }
+
+    .search-movies .btn {
+        height: 40px;
+    }
+
+    .search-movies input {
+        height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .search-movies input {
+        width: auto;
+    }
+
+    .movie-trailer {
+        height: 50vh;
+    }
+
+    .video-trailer {
+        height: 135%;
+    }
+
+    .trailer-poster {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .movie-trailer {
+        height: 40vh;
+    }
+
+    .video-trailer {
+        height: 135%;
+    }
+}
+
+/*Responsiveness for Height*/
